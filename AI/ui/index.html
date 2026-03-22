@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<title>AIDE v1.0.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="ic-chat" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="ic-folder" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="ic-terminal" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+<symbol id="ic-settings" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+<symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></symbol>
+<symbol id="ic-edit" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></symbol>
+<symbol id="ic-play" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></symbol>
+<symbol id="ic-save" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></symbol>
+<symbol id="ic-trash" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></symbol>
+<symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+<symbol id="ic-paperclip" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
+<symbol id="ic-send" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+<symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+<symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></symbol>
+<symbol id="ic-upload" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+<symbol id="ic-file-check" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></symbol>
+<symbol id="ic-folder-plus" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></symbol>
+<symbol id="ic-ai" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+<symbol id="ic-search" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+<symbol id="ic-terminal2" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="8 10 5 13 8 16"/><line x1="12" y1="16" x2="19" y2="16"/></symbol>
+</defs></svg>
+</head>
+<body>
+<canvas id="particle-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45"></canvas>
+<div class="app" id="app" style="position:relative;z-index:1">
+  <div class="hdr">
+    <div class="logo"><div class="logo-box">AI</div><div class="logo-text"><span>DEV</span><span class="logo-by">by nduyy0.0 · AIDEv1.0.0</span></div></div>
+    <div class="hdr-gap"></div>
+    <div class="mdl-tag" id="hdr-model" onclick="toggleSet()"><svg width="9" height="9"><use href="#ic-ai" stroke="currentColor" stroke-width="2"/></svg> qwen2.5:7b</div>
+    <div class="st-dot" id="st-dot"></div>
+  </div>
+  <div class="sidebar" id="sidebar">
+    <div class="sys-stats">
+      <div class="stat-r"><div class="stat-h"><span class="s-lbl">RAM</span><span class="s-val"><b id="pc-ram">—</b> GB</span></div><div class="bar-t"><div class="bar-f" id="pc-ram-bar" style="background:var(--acc)"></div></div></div>
+      <div class="stat-r"><div class="stat-h"><span class="s-lbl">CPU</span><span class="s-val"><b id="pc-cpu">—</b>%</span></div><div class="bar-t"><div class="bar-f" id="pc-cpu-bar" style="background:var(--pur)"></div></div></div>
+      <div class="stat-r"><div class="stat-h"><span class="s-lbl">STO</span><span class="s-val"><b id="pc-sto">—</b> GB</span></div><div class="bar-t"><div class="bar-f" id="pc-sto-bar" style="background:var(--grn)"></div></div></div>
+    </div>
+    <div class="sb-nav">
+      <div class="sec-l">Navigate</div>
+      <div class="ni on" id="pc-ni-chat" onclick="switchTo('chat')"><span class="ni-ic"><svg><use href="#ic-chat" stroke="currentColor" stroke-width="1.8"/></svg></span>Chat</div>
+      <div class="ni" id="pc-ni-files" onclick="switchTo('files')"><span class="ni-ic"><svg><use href="#ic-folder" stroke="currentColor" stroke-width="1.8"/></svg></span>Files</div>
+      <div class="ni" id="pc-ni-output" onclick="switchTo('output')"><span class="ni-ic"><svg><use href="#ic-terminal" stroke="currentColor" stroke-width="1.8"/></svg></span>Output</div>
+    </div>
+    <div class="sb-div"></div>
+    <div class="sb-nav"><div class="sec-l">Files</div></div>
+    <div class="sb-search" id="fs-wrap">
+      <div class="sb-search-inner">
+        <span class="sb-search-icon">🔍</span>
+        <input type="text" id="fs-input" class="sb-search-inp" placeholder="Tìm file..." autocomplete="off" spellcheck="false"
+          oninput="window._fsOnInput&&window._fsOnInput(this.value)"
+          onkeydown="window._fsOnKey&&window._fsOnKey(event)"
+          onfocus="this.style.borderColor='var(--acc)'" onblur="this.style.borderColor='var(--b1)'">
+        <button id="fs-clear" class="sb-search-clear" onclick="window._fsClear&&window._fsClear()" title="Esc">✕</button>
+      </div>
+      <div id="fs-count" class="sb-search-count"></div>
+    </div>
+    <div class="ft-wrap"><div class="vsc-tree" id="sb-tree"></div></div>
+  </div>
+  <div class="content-area">
+    <div class="pc-tabs" id="pc-tabs"></div>
+    <div class="panels">
+      <div class="panel on" id="p-chat">
+        <div class="chat-tb">
+          <svg width="11" height="11" style="flex-shrink:0;opacity:.4"><use href="#ic-chat" stroke="var(--t3)" stroke-width="1.8"/></svg>
+          <span class="chat-tb-title">Chat</span>
+          <button class="tbtn" id="tpl-btn" title="Prompt templates" onclick="window.toggleTemplatePanel&&window.toggleTemplatePanel()" style="color:var(--acc);border-color:rgba(77,158,255,.25);background:rgba(77,158,255,.07)">📋 Templates</button>
+          <button class="tbtn del" onclick="clearChatUI()"><svg><use href="#ic-trash" stroke="currentColor" stroke-width="2"/></svg>Xóa</button>
+        </div>
+        <div class="msgs" id="msgs"></div>
+        <div class="attach-chip" id="attach-chip"><svg width="10" height="10"><use href="#ic-paperclip" stroke="currentColor" stroke-width="2"/></svg><span id="attach-name"></span><button onclick="clearAttach()"><svg width="11" height="11"><use href="#ic-x" stroke="currentColor" stroke-width="2"/></svg></button></div>
+        <div class="attach-menu" id="attach-menu">
+          <button class="attach-opt" onclick="attachFromProject()"><span class="attach-opt-ic prj"><svg><use href="#ic-folder" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="attach-opt-info"><span class="attach-opt-lbl">File đang mở</span><span class="attach-opt-sub">File hiện tại trong Editor</span></span></button>
+          <button class="attach-opt" onclick="attachFromPhone()"><span class="attach-opt-ic phn"><svg><use href="#ic-phone" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="attach-opt-info"><span class="attach-opt-lbl">Từ điện thoại</span><span class="attach-opt-sub">Chọn file bất kỳ</span></span></button>
+        </div>
+        <input type="file" id="file-picker" style="display:none" accept=".py,.js,.html,.css,.json,.txt,.md,.sh" onchange="handleFilePick(this)">
+        <div class="inp-area">
+          <textarea class="chi" id="chat-inp" placeholder="Nhắn AI…" oninput="autoH(this)" onkeydown="chatKey(event)"></textarea>
+          <button class="btn-ic" title="Đính kèm" onclick="toggleAttachMenu(event)"><svg><use href="#ic-paperclip" stroke="currentColor" stroke-width="1.8"/></svg></button>
+          <button class="btn-send" id="send-btn" onclick="sendChat()"><svg><use href="#ic-send" stroke="white" stroke-width="2.2"/></svg></button>
+        </div>
+      </div>
+      <div class="panel" id="p-files">
+        <div class="file-editor">
+          <div class="fe-tabs">
+            <div class="fe-tab on" id="fe-tab-files" onclick="feSwitch('files')"><svg><use href="#ic-folder" stroke="currentColor" stroke-width="1.8"/></svg>Files</div>
+            <div class="fe-tab" id="fe-tab-editor" onclick="feSwitch('editor')"><div class="save-dot" id="save-dot"></div><svg><use href="#ic-edit" stroke="currentColor" stroke-width="1.8"/></svg>Editor</div>
+            <div class="fe-tab" onclick="openSearchPanel()" title="Tìm trong project"><svg><use href="#ic-search" stroke="currentColor" stroke-width="1.8"/></svg>Search</div>
+          </div>
+          <div class="fe-body" id="fe-body">
+            <div class="fe-pane on" id="fe-files">
+              <div class="fi-new-bar">
+                <button class="fi-new-btn" onclick="promptNewFile()"><svg><use href="#ic-file" stroke="currentColor" stroke-width="2"/></svg>Tạo file</button>
+                <button class="fi-new-btn dir" onclick="promptNewDir()"><svg><use href="#ic-folder-plus" stroke="currentColor" stroke-width="2"/></svg>Thư mục</button>
+              </div>
+              <div class="vsc-tree" id="main-tree"></div>
+            </div>
+            <div class="fe-pane" id="fe-editor">
+              <div class="etb">
+                <div class="efn"><div class="save-dot" id="save-dot2"></div><span id="editor-fname">—</span></div>
+                <button class="tbtn s" onclick="saveFile()"><svg><use href="#ic-save" stroke="currentColor" stroke-width="2"/></svg>Lưu</button>
+                <button class="tbtn r" onclick="runFile()"><svg><use href="#ic-play" stroke="currentColor" stroke-width="2"/></svg>Chạy</button>
+                <button class="tbtn ai" onclick="attachCurrent();switchTo('chat')"><svg><use href="#ic-ai" stroke="currentColor" stroke-width="2"/></svg>AI</button>
+              </div>
+              <div class="ecode">
+                <div class="line-nums" id="line-nums"></div>
+                <div class="code-content" id="code-content" contenteditable="true" spellcheck="false" oninput="onCodeEdit()"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" id="p-output">
+        <div class="out-tb">
+          <div class="out-t"><div class="run-dot"></div><span id="out-fname">—</span></div>
+          <button class="tbtn" style="color:var(--ylw);border:1px solid rgba(255,209,102,.25);background:rgba(255,209,102,.07)" onclick="runInTermux()"><svg><use href="#ic-terminal2" stroke="currentColor" stroke-width="1.8"/></svg>Termux</button>
+          <button class="tbtn del" onclick="clearOut()"><svg><use href="#ic-trash" stroke="currentColor" stroke-width="2"/></svg>Xóa</button>
+        </div>
+        <div class="out-log" id="out-log"></div>
+      </div>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="ss"><span class="ss-l">RAM</span><div class="ss-bar"><div class="ss-f" id="s-ram" style="background:var(--acc)"></div></div><span class="ss-v" id="v-ram">—</span></div>
+    <div class="ss"><span class="ss-l">CPU</span><div class="ss-bar"><div class="ss-f" id="s-cpu" style="background:var(--pur)"></div></div><span class="ss-v" id="v-cpu">—</span></div>
+    <div class="ss"><span class="ss-l">STO</span><div class="ss-bar"><div class="ss-f" id="s-sto" style="background:var(--grn)"></div></div><span class="ss-v" id="v-sto">—</span></div>
+  </div>
+  <div class="bot-nav">
+    <div class="bn on" id="bn-chat" onclick="switchTo('chat')"><div class="bi"><svg viewBox="0 0 24 24"><use href="#ic-chat" stroke="currentColor" stroke-width="1.7"/></svg></div><div class="bl">Chat</div></div>
+    <div class="bn" id="bn-files" onclick="switchTo('files')"><div class="bi"><svg viewBox="0 0 24 24"><use href="#ic-folder" stroke="currentColor" stroke-width="1.7"/></svg></div><div class="bl">Files</div></div>
+    <div class="bn" id="bn-output" onclick="switchTo('output')"><div class="bi"><svg viewBox="0 0 24 24"><use href="#ic-terminal" stroke="currentColor" stroke-width="1.7"/></svg></div><div class="bl">Output</div></div>
+    <div class="bn" id="bn-settings" onclick="toggleSet()"><div class="bi"><svg viewBox="0 0 24 24"><use href="#ic-settings" stroke="currentColor" stroke-width="1.7"/></svg></div><div class="bl">Settings</div></div>
+  </div>
+</div>
+<div class="ov" id="ov" onclick="closeSet()"></div>
+<div class="setp" id="setp" style="display:none">
+  <div class="set-hdr"><div class="set-hdr-icon"><svg width="14" height="14"><use href="#ic-settings" stroke="var(--acc)" stroke-width="1.8"/></svg></div><div class="set-hdr-info"><div class="set-ttl">Cài đặt</div><div class="set-hint">AI Dev Studio AIDEv1.0.0</div></div><button class="set-close" onclick="closeSet()"><svg width="12" height="12"><use href="#ic-x" stroke="currentColor" stroke-width="2"/></svg></button></div>
+  <div class="set-s">
+    <div class="set-slbl">Model AI</div>
+    <div class="model-search-box"><svg width="14" height="14" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.5"><use href="#ic-search" stroke="currentColor" stroke-width="1.5"/></svg><input type="text" id="model-search" class="model-search-input" placeholder="Tìm model... (qwen, llama, code)" oninput="filterModels(this.value)"></div>
+    <div class="model-cards" id="model-cards">
+      <div class="mc" onclick="selModel(this,'llama3.2:3b')"><div class="mc-radio"></div><div class="mc-info"><div class="mc-name">llama3.2:3b</div><div class="mc-desc">Nhẹ nhất · task đơn giản</div></div><div class="mc-right"><div class="mc-tag lite">~2GB</div><button class="mc-dl" onclick="event.stopPropagation();pullModel(this,'llama3.2:3b')"><svg><use href="#ic-download" stroke="currentColor" stroke-width="2"/></svg>Tải</button></div></div>
+      <div class="mc on" onclick="selModel(this,'qwen2.5:7b')"><div class="mc-radio"></div><div class="mc-info"><div class="mc-name">qwen2.5:7b</div><div class="mc-desc">Cân bằng · tiếng Việt + code</div></div><div class="mc-right"><div class="mc-tag mid">~4.4GB</div><button class="mc-dl" onclick="event.stopPropagation();pullModel(this,'qwen2.5:7b')"><svg><use href="#ic-download" stroke="currentColor" stroke-width="2"/></svg>Tải</button></div></div>
+      <div class="mc" onclick="selModel(this,'deepseek-coder:6.7b')"><div class="mc-radio"></div><div class="mc-info"><div class="mc-name">deepseek-coder</div><div class="mc-desc">Chuyên code Python/HTML</div></div><div class="mc-right"><div class="mc-tag pro">~4.1GB</div><button class="mc-dl" onclick="event.stopPropagation();pullModel(this,'deepseek-coder:6.7b')"><svg><use href="#ic-download" stroke="currentColor" stroke-width="2"/></svg>Tải</button></div></div>
+      <div class="mc" onclick="selModel(this,'codellama:13b')"><div class="mc-radio"></div><div class="mc-info"><div class="mc-name">codellama:13b</div><div class="mc-desc">Mạnh nhất · cần RAM nhiều</div></div><div class="mc-right"><div class="mc-tag max">~8GB</div><button class="mc-dl" onclick="event.stopPropagation();pullModel(this,'codellama:13b')"><svg><use href="#ic-download" stroke="currentColor" stroke-width="2"/></svg>Tải</button></div></div>
+    </div>
+  </div>
+  <div class="set-div"></div>
+  <div class="set-s">
+    <div class="set-slbl">CPU Threads</div>
+    <div class="ts-head"><span class="ts-lbl">Số luồng xử lý</span><span class="ts-val" id="ts-val">4 threads</span></div>
+    <div class="ts-track" id="ts-track"><div class="ts-fill" id="ts-fill" style="width:33.3%"></div><div class="ts-thumb" id="ts-thumb" style="left:33.3%"></div></div>
+    <div class="ts-ticks"><span class="ts-tick">2</span><span class="ts-tick">4</span><span class="ts-tick">6</span><span class="ts-tick">8</span></div>
+    <p style="font-size:8.5px;color:var(--t3);margin-top:6px">Termux: khuyến nghị 4 threads</p>
+  </div>
+  <div class="set-div"></div>
+  <div class="set-s">
+    <div class="set-slbl">Editor</div>
+    <div class="set-row"><div><div class="set-lbl">Auto Save</div><div class="set-sub">Tự động lưu mỗi 30s</div></div><div class="tog on" onclick="this.classList.toggle('on')"></div></div>
+    <div class="set-row"><div><div class="set-lbl">Line Numbers</div></div><div class="tog on" onclick="toggleLN(this)"></div></div>
+  </div>
+  <div class="set-div"></div>
+  <div class="set-s">
+    <div class="set-slbl">AI</div>
+    <div class="set-row"><div><div class="set-lbl">Stream phản hồi</div><div class="set-sub">Hiện từng token</div></div><div class="tog on" onclick="this.classList.toggle('on')"></div></div>
+    <div class="set-row"><div><div class="set-lbl">Health Monitor</div><div class="set-sub">Cảnh báo khi bridge offline</div></div><div class="tog on" onclick="this.classList.toggle('on')"></div></div>
+  </div>
+  <div class="set-foot"><button class="apply-btn" onclick="applySet()"><svg><use href="#ic-check" stroke="white" stroke-width="2.5"/></svg>Áp dụng</button></div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="theme.js"></script>
+<script src="app.js"></script>
+<script src="model-filter.js"></script>
+<script src="syntax-highlight.js"></script>
+<script src="terminal.js"></script>
+<script src="particles.js"></script>
+<script src="templates.js"></script>
+<script src="git.js"></script>
+<script src="file-search.js"></script>
+<script src="health.js"></script>
+<script src="projects.js"></script>
+<script src="diff.js"></script>
+</body>
+</html>

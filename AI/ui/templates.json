@@ -1,0 +1,58 @@
+[
+  {
+    "id": "game-2d-pygame",
+    "icon": "🎮",
+    "label": "Game 2D Pygame",
+    "tags": ["game", "pygame", "2d"],
+    "prompt": "Tạo game 2D đơn giản bằng Pygame cho Android/Termux.\n\nYêu cầu:\n- Tên game: [TÊN GAME]\n- Thể loại: [platformer / top-down / puzzle]\n- Nhân vật: [MÔ TẢ NHÂN VẬT]\n- Màu nền: [MÀU]\n\nRàng buộc kỹ thuật:\n- Chỉ dùng pygame-ce (nhẹ hơn pygame)\n- Không dùng ảnh ngoài, vẽ bằng pygame.draw\n- Resolution: 360x640 (dọc, phù hợp điện thoại)\n- FPS: 30\n- Có game loop, xử lý QUIT event\n- Có màn hình start và game over"
+  },
+  {
+    "id": "game-text",
+    "icon": "📖",
+    "label": "Text Adventure",
+    "tags": ["game", "text", "python"],
+    "prompt": "Tạo game text adventure (phiêu lưu văn bản) bằng Python thuần.\n\nYêu cầu:\n- Chủ đề: [VÍ DỤ: kiếm hiệp / sci-fi / kinh dị]\n- Số phòng/địa điểm: [SỐ]\n- Có hệ thống inventory đơn giản\n- Có điểm HP cho nhân vật\n- Lưu/load game bằng JSON\n\nChạy tốt trên Termux, không cần thư viện ngoài."
+  },
+  {
+    "id": "web-api-flask",
+    "icon": "🌐",
+    "label": "REST API Flask",
+    "tags": ["flask", "api", "web"],
+    "prompt": "Tạo REST API bằng Flask cho Termux/Android.\n\nChức năng cần xây dựng:\n- [MÔ TẢ CHỨC NĂNG CHÍNH]\n\nEndpoint cần có:\n- GET /api/[resource] — lấy danh sách\n- POST /api/[resource] — tạo mới\n- GET /api/[resource]/<id> — lấy 1 item\n- DELETE /api/[resource]/<id> — xóa\n\nYêu cầu kỹ thuật:\n- Lưu dữ liệu bằng JSON file (không dùng DB)\n- Có error handling (400, 404, 500)\n- CORS enabled\n- Port: 8080"
+  },
+  {
+    "id": "web-html-page",
+    "icon": "🖼️",
+    "label": "HTML Page tĩnh",
+    "tags": ["html", "css", "web"],
+    "prompt": "Tạo trang HTML tĩnh đẹp, chạy ngay trên điện thoại.\n\nMô tả trang:\n- Mục đích: [VÍ DỤ: landing page / portfolio / dashboard]\n- Màu chủ đạo: [MÀU]\n- Font: [VÍ DỤ: sans-serif / monospace]\n\nYêu cầu:\n- 1 file HTML duy nhất (CSS + JS inline)\n- Responsive, dùng được trên mobile\n- Không cần CDN ngoài (offline-friendly)\n- Có animation nhẹ (transition/keyframe)"
+  },
+  {
+    "id": "data-csv",
+    "icon": "📊",
+    "label": "Xử lý CSV/Data",
+    "tags": ["python", "data", "csv"],
+    "prompt": "Viết script Python xử lý dữ liệu, chạy trên Termux.\n\nDữ liệu đầu vào:\n- Loại file: [CSV / JSON / TXT]\n- Tên file: [TÊN FILE]\n- Cấu trúc dữ liệu: [MÔ TẢ CỘT/FIELD]\n\nThao tác cần làm:\n- [VÍ DỤ: lọc theo điều kiện / thống kê / nhóm và tổng hợp]\n\nĐầu ra:\n- In kết quả ra terminal\n- Xuất file: [CSV / JSON / báo cáo TXT]\n\nChỉ dùng thư viện có sẵn trong Python (csv, json, collections)."
+  },
+  {
+    "id": "util-file",
+    "icon": "🔧",
+    "label": "Tiện ích File/Folder",
+    "tags": ["python", "utility", "file"],
+    "prompt": "Viết script Python tiện ích quản lý file/folder cho Termux.\n\nChức năng:\n- [VÍ DỤ: đổi tên hàng loạt / tìm file trùng / backup folder]\n\nChi tiết:\n- Thư mục làm việc: [ĐƯỜNG DẪN hoặc nhập từ CLI]\n- Filter theo: [extension / tên / ngày tạo]\n- Tùy chọn dry-run (xem trước không thực hiện)\n\nYêu cầu:\n- Dùng argparse để nhận tham số CLI\n- In tiến trình rõ ràng\n- Confirm trước khi xóa/đổi"
+  },
+  {
+    "id": "bot-telegram",
+    "icon": "🤖",
+    "label": "Bot Telegram nhẹ",
+    "tags": ["python", "bot", "telegram"],
+    "prompt": "Tạo bot Telegram đơn giản chạy trên Termux.\n\nBot cần làm:\n- [MÔ TẢ CHỨC NĂNG]\n\nLệnh bot:\n- /start — chào hỏi\n- /help — hướng dẫn\n- /[LỆNH CHÍNH] — [CHỨC NĂNG]\n\nYêu cầu kỹ thuật:\n- Dùng pyTelegramBotAPI (pip install pyTelegramBotAPI)\n- Polling mode (không cần webhook)\n- Lưu token vào file .env\n- Không crash khi gặp lỗi mạng"
+  },
+  {
+    "id": "debug-code",
+    "icon": "🐛",
+    "label": "Debug & Fix Code",
+    "tags": ["debug", "fix", "review"],
+    "prompt": "Hãy review và debug đoạn code sau:\n\n[DÁN CODE VÀO ĐÂY]\n\nVấn đề đang gặp:\n- Lỗi: [MÔ TẢ LỖI hoặc dán traceback]\n- Kết quả mong đợi: [MÔ TẢ]\n- Kết quả thực tế: [MÔ TẢ]\n\nMôi trường: Android/Termux, Python [VERSION]\n\nHãy:\n1. Tìm nguyên nhân lỗi\n2. Giải thích rõ tại sao\n3. Đưa ra code đã fix\n4. Gợi ý cải thiện thêm nếu có"
+  }
+]
